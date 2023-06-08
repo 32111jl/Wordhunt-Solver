@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair:wght@300&display=swap');
+
+.solver {
+  text-align: center;
+  font-family: 'Playfair', serif;
+}
+
+.solver-logo {
+  height: 35vmin;
+  margin-top: -5vh;
+  pointer-events: none;
+}
+
+/* @media (prefers-reduced-motion: no-preference) {
+  .solver-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+} */
+
+.solver-header {
+  background-color: #d4e6cf;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: #585743;
+  positive: relative;
+}
+
+.wh-footer {
+  color: #91a5ab;
+  font-size: 1.0rem;
+  position: absolute;
+  bottom: 1vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.solver-header h2, h4, h6 {
+  margin-bottom: 0rem;
+}
+
+.github-link {
+  margin-right: 3rem;
+}
+
+.about-link {
+  margin-left: 3rem;
+}

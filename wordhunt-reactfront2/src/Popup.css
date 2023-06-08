@@ -1,0 +1,138 @@
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #f7f2f8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  border: 2px solid transparent;
+  /* adding border fixes dark/close buttons */
+  /* transition: opacity 1s ease-in-out, transform 1s ease-in-out; */
+  transition: clip-path 1s ease-in-out;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+  /* opacity: 1; */
+  /* transform: translate(0, 0); */
+}
+
+.popup-inner {
+  border-radius: 5px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.popup-content {
+  min-height: 80vh;
+  width: 85%;
+  flex: 1;
+  overflow-y: auto;
+  white-space: normal;
+  word-break: break-word;
+}
+
+.popup-header {
+  font-size: 2rem;
+  position: sticky;
+  top: 1rem;
+  margin: 2vh;
+  /* white-space: normal;
+  word-break: break-word; */
+}
+
+.word-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.word-list li {
+  margin-bottom: 0.5rem;
+  font-size: 1.375rem;
+}
+
+.popup-controls {
+  position: absolute;
+  top: 1rem;
+  right: 0.25rem;
+  display: flex;
+  align-items: center;
+  width: 10%;
+}
+
+@media (max-width: 480px) {
+  .popup-controls {
+    flex-direction: column;
+    align-items: flex-end;
+  }
+}
+
+.dark-mode-button {
+  background-color: transparent;
+  border: none;
+  padding: none;
+  cursor: pointer;
+}
+
+.close-button {
+  background-color: transparent;
+  border: none;
+  padding: none;
+  cursor: pointer;
+  transition: transform 1s ease-in-out;
+}
+
+.dark-mode-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.close-icon {
+  width: 1.75rem;
+  height: 1.75rem;
+}
+
+.popup.dark-mode {
+  background-color: #212625;
+  animation: darkWave 1s ease-in-out forwards;
+  animation-direction: alternate;
+}
+
+.popup.dark-mode .popup-controls,
+.popup.dark-mode .popup-header,
+.popup.dark-mode .word-list li {
+  filter: invert(1);
+  transition: filter 1s ease-in-out;
+}
+
+@keyframes darkWave {
+  0% {
+    background-color: #f7f2f8;
+  }
+  50% {
+    background-color: #212625;
+  }
+}
+
+.popup.light-mode {
+  animation: lightWave 1s ease-in-out;
+  /* transition: background-color 1s ease-in-out; */
+}
+
+@keyframes lightWave {
+  0% {
+    background-color: #212625;
+  }
+  50% {
+    background-color: #f7f2f8;
+  }
+}
+
+.popup.closed {
+  /* transform: translate(-100%, 100%); */
+  clip-path: polygon(0 0, 0% 0, 0% 100%, 0% 100%);
+}

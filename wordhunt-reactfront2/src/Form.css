@@ -1,0 +1,34 @@
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+}
+
+label {
+  margin: 1rem;
+}
+
+input {
+  margin-top: 1vh;
+  margin-left: 2vw;
+  padding: 0.5rem;
+  border-radius: 0.75rem;
+  border: 1px solid #91a5ab;
+  width: 20rem;
+  font: inherit;
+  font-size: 1.2rem;
+}
+
+input[type="submit"] {
+  width: 9rem;
+  font: inherit;
+  cursor: pointer;
+  font-size: 1.0rem;
+}
+
+input[type="submit"]:hover {
+  background-color: #91a5ab;
+  color: #d4e6cf;
+}
